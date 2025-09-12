@@ -27,7 +27,44 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        week02Variables()
     }
+}
+
+
+fun week02Functions(){
+    println("Week02 Functions")
+
+    fun greet(name: String) = "Hello, $name!"
+
+    println(greet("Android Developer"))
+
+}
+
+fun week02Variables(){
+    println("Week02 Variables")
+
+    val courseName = "Mobile Programming"
+    //courseName = "IoT Programming" (재할당 불가)
+    var week = 1
+    week =2
+
+    //println("Couse : $courseName")
+    //println("Week : $week")
+
+    println("== Kotlin Variables ==")
+
+    //val name = "Android"
+    val name: String = "Android"
+    var version = 8.1
+    println("Hello $name $version")
+
+    val age: Int = 23
+    val height: Double = 173.5
+    val isStudent: Boolean = true
+
+    println("Age : $age, Height : $height, Student: $isStudent")
+
 }
 
 @Composable
