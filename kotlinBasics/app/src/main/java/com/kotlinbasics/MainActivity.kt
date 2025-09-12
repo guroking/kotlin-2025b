@@ -35,37 +35,56 @@ class MainActivity : ComponentActivity() {
 fun week02Functions(){
     println("Week02 Functions")
 
-    fun greet(name: String) = "Hello, $name!"
+    println("== Kotlin Functions ==")
 
+    fun greet(name: Stinrg) = "Hello, $name!"
+//
+//    fun greet(name: String) = "Hello, $name!"
+//
     println(greet("Android Developer"))
+//
 
+    fun add(a: Int, b:Int) = a + b
+
+    fun introduce(name: String, age: Int = 19){
+        println("My name is $name and I'm $age years old")
+    }
+
+    println(greet("Kotlin"))
+    println("Sum : ${add(5, -71)}")
+    introduce("Park")
+    introduce("kim", 29)
+
+//    fun greet(name: String): String {
+//        return "Hello, $name"
+//    }
 }
-
-fun week02Variables(){
-    println("Week02 Variables")
-
-    val courseName = "Mobile Programming"
-    //courseName = "IoT Programming" (재할당 불가)
-    var week = 1
-    week =2
-
-    //println("Couse : $courseName")
-    //println("Week : $week")
-
-    println("== Kotlin Variables ==")
-
-    //val name = "Android"
-    val name: String = "Android"
-    var version = 8.1
-    println("Hello $name $version")
-
-    val age: Int = 23
-    val height: Double = 173.5
-    val isStudent: Boolean = true
-
-    println("Age : $age, Height : $height, Student: $isStudent")
-
-}
+//
+//fun week02Variables(){
+//    println("Week02 Variables")
+//
+//    val courseName = "Mobile Programming"
+//    //courseName = "IoT Programming" (재할당 불가)
+//    var week = 1
+//    week =2
+//
+//    //println("Couse : $courseName")
+//    //println("Week : $week")
+//
+//    println("== Kotlin Variables ==")
+//
+//    //val name = "Android"
+//    val name: String = "Android"
+//    var version = 8.1
+//    println("Hello $name $version")
+//
+//    val age: Int = 23
+//    val height: Double = 173.5
+//    val isStudent: Boolean = true
+//
+//    println("Age : $age, Height : $height, Student: $isStudent")
+//
+//}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
