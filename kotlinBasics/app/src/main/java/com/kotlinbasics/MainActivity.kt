@@ -1,6 +1,7 @@
 package com.kotlinbasics
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -32,6 +33,22 @@ class MainActivity : ComponentActivity() {
         week03Classes()
     }
 }
+
+
+
+private fun week03Collections() {
+    Log.d("KotlinWeek03", "== Kotlin Collections ==")
+
+    val fruits = listOf("apple", "banana", "orange")
+//    fruits.add("kiwi") *add함수 사용 불가
+    Log.d("KotlinWeek03", "fruits : $fruits")
+
+    for(fruit in fruits){
+        Log.d("KotlinWeek03", "Fruit : $fruit")
+    }
+}
+
+
 
 
 private fun week03Classes(){
