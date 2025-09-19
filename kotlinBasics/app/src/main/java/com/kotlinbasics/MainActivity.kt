@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 //        week02Variables()
 //        week02Functions()
         week03Classes()
-        week03Collections()
+//        week03Collections()
     }
 }
 
@@ -44,48 +44,62 @@ private fun week03Collections(){
     mutableFruits.add("banana")
 
     Log.d("KotlinWeek03", "Fruits : $fruits")
-    Log.d("KotlinWeek03", "Mutable Fruit : $mutableFruits")
+    Log.d("KotlinWeek03", "Mutable Fruits : $mutableFruits")
 
-    val scores = mapOf("kim" to 97, "Park" to 100, "Lee" to 99)
+    val scores = mapOf("Kim" to 97, "Park" to 100, "Lee" to 99)
     Log.d("KotlinWeek03", "Scores : $scores")
 
     for(fruit in mutableFruits){
         Log.d("KotlinWeek03", "Fruit : $fruit")
     }
 
-    scores.forEach{(name, score) -> Log.d("KotlinWeek03", "$name scored $score")}
+    scores.forEach{(name, score) -> Log.d("KotlinWeek03","$name scored $score")}
 }
-
 
 private fun week03Classes(){
     Log.d("KotlinWeek03","== Kotlin Classes ==")
 
     class Person(val name: String, var age: Int){
-        fun inrtoduce(){
-            Log.d("KotlinWeek03", "안녕하세요, $name ($age 세)입니다.")
+        fun introduce(){
+            Log.d("KotlinWeek03","안녕하세요, $name ($age 세)입니다.")
         }
         fun birthday(){
             age++
-            Log.d("KotlinWeek03", "$name 의 생일! 이제 $age 세...")
+            Log.d("KotlinWeek03","$name 의 생일! 이제 $age 세...")
         }
     }
-
     val person1 = Person("홍길동", 31)
-    person1.inrtoduce()
+    person1.introduce()
     person1.birthday()
 
-    class Animal(var species: String){
+    open class Animal(var species: String){
         var weight: Double = 0.0
         constructor(species: String, weight: Double) : this(species){
             this.weight = weight
-            Log.d("KotlinWeek03", "$species 의  무게 : 이제 $weight kg")
+            Log.d("KotlinWeek03","$species 의 무게 :  이제 $weight kg")
         }
-        fun makeSound(){
-            Log.d("KotlinWeek03", "$species 가 소리를 냅니다")
+        open fun makeSound(){
+            Log.d("KotlinWeek03","$species 가 소리를 냅니다")
         }
     }
     val puppy = Animal("강아지", 6.5)
     puppy.makeSound()
+
+    class Dog(species: String, weight: Double, val breed: String) : Animal(species, weight){
+        override fun makeSound(){
+            Log.d("KotlinWeek03","$breed ($species) 가 멍멍 짖습니다!")
+        }
+    }
+    val dog = Dog("개", 12.5, "골든 리트리버")
+    dog.makeSound()
+
+    data class Book(val title: String, val author: String, val pages: Int)
+
+    val book1 = Book("코틀린 입문", "Kim", 400)
+    val book2 = Book("코틀린 입문", "Kim", 400)
+
+    Log.d("KotlinWeek03", "book1 == book2: ${book1 == book2}")
+    Log.d("KotlinWeek03", "book1: $book1")
 
 //    class Student{
 //        var name: String = ""
@@ -108,7 +122,6 @@ private fun week03Classes(){
 //    println("Person1: $person1")
 //    println("Equal?: ${person1 == person2}")
 }
-
 
 private fun week02Functions(){
     println("Week02 Functions")
