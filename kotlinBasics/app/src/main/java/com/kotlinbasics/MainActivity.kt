@@ -30,7 +30,8 @@ class MainActivity : ComponentActivity() {
         }
 //        week02Variables()
 //        week02Functions()
-        week03Classes()
+//        week03Classes()
+        week03Collections()
     }
 }
 
